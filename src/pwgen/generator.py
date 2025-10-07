@@ -8,14 +8,17 @@ symbols = list(string.punctuation)
 
 choices = [letters, numbers, symbols]
 
-def generate(length: int) -> str:
+DEFAULT_PASSWORD_LENGTH = 10
+
+def gen(length: int = None) -> str:
     """
     Generates a random string of length `length`.
     :param length: the length of the string to generate
     :return: the string as combination of the values of several arrays
     """
+    password_length = DEFAULT_PASSWORD_LENGTH if length is None else length
     password = ""
-    for threshold in range(0, length):
+    for threshold in range(0, password_length):
         choice = choices[random.randint(0, len(choices) - 1)]
         password += random.choice(choice)
 

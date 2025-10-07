@@ -13,4 +13,4 @@ requires-python = ">=3.8"
 dependencies = ["typer"]
 
 [project.scripts]
-pwgen = "pw_generator.cli:app"
+pwgen = "pwgen.cli:app"
